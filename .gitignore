@@ -55,5 +55,16 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
 
+.list
+
+# credintial
+firebaseDev.json
+env.dev.list
+env.prod.list
+
+# IDE file
+.idea/
+
+dist/
+dist-test/

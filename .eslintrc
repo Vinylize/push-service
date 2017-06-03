@@ -1,0 +1,14 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "max-len": 0,
+    "generator-star-spacing": 0,
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "import/no-dynamic-require": 0
+  }
+}
