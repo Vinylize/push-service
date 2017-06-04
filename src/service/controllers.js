@@ -91,7 +91,7 @@ const orderCatchController = (msg) => {
 const adminApproveRunnerController = (msg) => {
   const userId = msg.id;
 
-  refs.user.root(userId).once('value')
+  refs.user.root.child(userId).once('value')
     .then(userSnap => userSnap.val())
     .then((user) => {
       if (user && user.dt) {
@@ -118,7 +118,7 @@ const adminApproveRunnerController = (msg) => {
 const adminDispproveRunnerController = (msg) => {
   const userId = msg.id;
 
-  refs.user.root(userId).once('value')
+  refs.user.root.child(userId).once('value')
     .then(userSnap => userSnap.val())
     .then((user) => {
       if (user && user.dt) {
