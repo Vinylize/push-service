@@ -9,7 +9,8 @@ ADD . /app
 
 RUN npm install -g gulp
 RUN npm install
+RUN gulp build
 
 COPY . /app
 
-CMD [ "gulp", "dev" ]
+CMD [ "gulp", "start:dev" ]
