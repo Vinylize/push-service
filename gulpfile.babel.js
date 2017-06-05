@@ -7,6 +7,7 @@ import istanbul from 'gulp-istanbul';
 import mocha from 'gulp-mocha';
 import rimraf from 'rimraf';
 import sourcemaps from 'gulp-sourcemaps';
+import { spawn } from 'child_process';
 
 const SOURCE = {
   ALL: 'src/**/*.js',
@@ -15,6 +16,14 @@ const SOURCE = {
   DIST: 'dist',
   DIST_TEST: 'dist-test'
 };
+
+gulp.task('start:dev', () => {
+  envFile('./env.dev.list');
+  const env = Object.create(process.env);
+  env.NODE_ENV = 'development';
+  spawn('node', ['./dist/service/index.js'], { stdio: 'inherit', env });
+});
+
 
 gulp.task('dev', ['build'], () => {
   envFile('./env.dev.list');

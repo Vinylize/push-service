@@ -62,6 +62,7 @@ typings/
 firebaseDev.json
 env.dev.list
 env.prod.list
+env.test.list
 
 # IDE file
 .idea/
