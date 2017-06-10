@@ -62,14 +62,14 @@ const orderCatchController = (msg) => {
   refs.order.root.child(orderId).once('value')
     .then(orderSnap => orderSnap.val())
     .then((order) => {
-      refs.user.root.child(order.oId).once('value')
+      refs.user.root.child(order.rId).once('value')
         .then(userSnap => userSnap.val())
         .then((user) => {
           if (user && user.dt) {
             const payload = {
               notification: {
                 title: '배달 시작',
-                body: `배달 시작!! ${user.n}님이 물건을 구매하기 위해 이동하고 있어요.`,
+                body: `배달 시작!! ${user.n}러너가 물건을 얻기 위해 이동하고 있어요. 예상 소요시간은 30분 입니다.`,
               },
               data: {
                 type: 'CATCH_ORDER',
